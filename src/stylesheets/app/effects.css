@@ -1,0 +1,27 @@
+.fx-fade {
+  transition: .3s ease-out;
+
+  &.fx-fade-hidden {
+    visibility: collapse !important;
+    opacity: 0 !important;
+    transition: .3s ease-in;
+  }
+}
+
+.white-underlay {
+  background-color: rgba(255, 255, 255, .85);
+}
+
+.background {
+  background-color: var(--background-color);
+}
+
+.checkered {
+  background-color: var(--checkered-color-1);
+  background-image:
+    linear-gradient(45deg, var(--checkered-color-2) 25%, transparent 25%, transparent 75%, var(--checkered-color-2) 75%, var(--checkered-color-2)),
+    linear-gradient(45deg, var(--checkered-color-2) 25%, transparent 25%, transparent 75%, var(--checkered-color-2) 75%, var(--checkered-color-2));
+  background-size: calc(var(--checkered-size) * 2) calc(var(--checkered-size) * 2);
+  background-position: 0 0, var(--checkered-size) var(--checkered-size);
+  background-repeat: repeat;
+}

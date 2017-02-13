@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="never">
+    <title>Remove Alpha</title>
+    <link rel="stylesheet" href="vendor.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="vendor.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+
+  <body class="no-drop">
+    <main id="pages" class="background">
+      <div id="page-interface" class="white-underlay fx-fade fx-fade-hidden">
+        <div id="page-interface-box" class="checkered">
+          <div id="page-interface-box-underlay" class="white-underlay">
+            <div>
+              <h3>Load by URL</h3>
+              <form id="form-url-input" method="GET">
+                <div class="form-control">
+                  <input id="input-url" type="url" name="url" required placeholder="http://">
+                  <button id="input-url-trigger" type="submit">Go</button>
+                </div>
+              </form>
+            </div>
+            <div>
+              <h3>Load by File</h3>
+              <div class="form-control">
+                <input id="input-file" type="file" accept="image/*">
+              </div>
+            </div>
+            <div class="supplement">
+              or <em>drag and drop</em> an image here.
+            </div>
+            <div id="background-control-form">
+              <label>
+                Background
+                <input id="input-background-color" type="color">
+              </label>
+              <label>
+                Checkered Size
+                <input id="input-checkered-size" type="number" min="1">
+              </label>
+              <br>
+              <label>
+                Checkered #1
+                <input id="input-checkered-color-1" type="color">
+              </label>
+              <label>
+                Checkered #2
+                <input id="input-checkered-color-2" type="color">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page-app" class="fx-fade fx-fade-hidden">
+        <div id="container">
+          <img id="image-source" class="checkered fx-fade fx-fade-hidden">
+          <img id="image-result" class="checkered fx-fade fx-fade-hidden">
+        </div>
+        <div id="spinner" class="fx-fade"></div>
+        <button class="back-to-top-button">
+          Back to top
+        </button>
+      </div>
+    </main>
+    <aside id="drop-overlay" class="fx-fade fx-fade-hidden">
+      <div>
+        Drop Here!
+      </div>
+    </aside>
+    <aside id="error-container" class="no-drop fx-fade fx-fade-hidden">
+      <div id="error">
+        <h3 id="error-summary"></h3>
+        <pre id="error-detail"></pre>
+        <div id="error-actions">
+          <button class="reload-button">
+            Reload
+          </button>
+          <button class="back-to-top-button">
+            Back to top
+          </button>
+        </div>
+        <div id="retry-with-message">
+          or retry with another CORS proxy...<br>
+          <select id="retry-with-selector"></select>
+        </div>
+      </div>
+    </aside>
+  </body>
+
+</html>
